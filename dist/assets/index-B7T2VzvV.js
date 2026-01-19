@@ -38,4 +38,4 @@
                 <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
             </svg>
             Post Meme
-        `}}function et(t,e="info"){const n=document.getElementById("toast");n.textContent=t,n.className=`toast ${e} show`,setTimeout(()=>{n.classList.remove("show")},3e3)}ta();
+        `}}function et(t,e="info"){const n=document.getElementById("toast");n.textContent=t,n.className=`toast ${e} show`,setTimeout(()=>{n.classList.remove("show")},3e3)}document.getElementById("feedView").style.display="none";document.getElementById("editorView").style.display="none";ta();

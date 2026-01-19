@@ -1058,4 +1058,7 @@ function showToast(message, type = 'info') {
 }
 
 // Initialize app
+// Ensure views are hidden on page load
+document.getElementById('feedView').style.display = 'none';
+document.getElementById('editorView').style.display = 'none';
 init();
