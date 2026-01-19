@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meme Generator</h1>
+            <p class="subtitle">Create custom memes with ease</p>
+        </header>
+        
+        <div class="main-content">
+            <!-- Left Side: Image Upload and Canvas -->
+            <div class="left-section">
+                <!-- Upload Section -->
+                <div class="upload-section">
+                    <label for="imageUpload" class="upload-label">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <span class="upload-title">Upload Image</span>
+                        <span class="upload-subtitle">Click or drag and drop</span>
+                        <input type="file" id="imageUpload" accept="image/*" hidden>
+                    </label>
+                </div>
+                
+                <!-- Canvas Container -->
+                <div class="canvas-wrapper">
+                    <canvas id="memeCanvas"></canvas>
+                    <div id="placeholder" class="placeholder">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <p>Upload an image to get started</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side: Controls -->
+            <div class="right-section">
+                <!-- Add Text Section -->
+                <div class="control-card">
+                    <h3>Add Text</h3>
+                    
+                    <div class="control-group">
+                        <label for="textInput">Text Content</label>
+                        <textarea id="textInput" placeholder="Enter your meme text (press Enter for new line)" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="fontSize">Font Size</label>
+                        <div class="slider-group">
+                            <input type="range" id="fontSize" min="20" max="100" value="40">
+                            <span id="fontSizeValue">40</span>
+                        </div>
+                    </div>
+                    
+                    <div class="color-group">
+                        <div class="control-group">
+                            <label for="textColor">Text Color</label>
+                            <div class="color-picker">
+                                <input type="color" id="textColor" value="#ffffff">
+                                <span id="textColorValue">#FFFFFF</span>
+                            </div>
+                        </div>
+                        
+                        <div class="control-group">
+                            <label for="borderColor">Border Color</label>
+                            <div class="color-picker">
+                                <input type="color" id="borderColor" value="#000000">
+                                <span id="borderColorValue">#000000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="addTextBtn" class="add-text-btn">Add Text to Canvas</button>
+                </div>
+                
+                <!-- Text Boxes Section -->
+                <div class="control-card">
+                    <h3>Text Boxes</h3>
+                    <div id="textBoxesList" class="text-boxes-list">
+                        <!-- Text boxes will be added here dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Download Button -->
+                <button id="downloadBtn" class="download-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Meme
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
