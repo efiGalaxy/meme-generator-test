@@ -450,9 +450,12 @@ body {
 /* Editor Container */
 .editor-container {
     margin-top: 70px;
-    display: flex;
     height: calc(100vh - 70px);
     overflow: hidden;
+}
+
+.editor-container[style*="display: flex"] {
+    display: flex;
 }
 
 /* Left Sidebar */
